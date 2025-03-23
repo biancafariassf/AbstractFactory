@@ -1,4 +1,3 @@
-
 import app.Application;
 import factories.GUIFactory;
 import factories.MacOSFactory;
@@ -14,38 +13,37 @@ import factories.WindowsFactory;
  * @author FATEC ZONA LESTE
  */
 
-//O padrão Abstract Factory permite criar famílias de objetos (botões e caixas de seleção) de maneira flexível e desacoplada da implementação concreta.
+// O padrão Abstract Factory serve pra ajudar a criar vários tipos de objetos relacionados (tipo botões e checkboxes) sem precisar se preocupar com os detalhes de cada implementação.
 
-//Dependendo do sistema operacional, uma fábrica específica (MacOSFactory ou WindowsFactory) é escolhida para criar os componentes gráficos apropriados.
+// Dependendo de qual sistema operacional você tá usando, o código escolhe a fábrica certa (MacOSFactory ou WindowsFactory) pra criar os componentes gráficos que combinam com o SO.
 
-//GUIFactory atua como uma interface abstrata que declara os métodos para criar os componentes gráficos, enquanto as fábricas concretas fornecem as implementações desses métodos.
+// A GUIFactory funciona como a "planta" geral que define os métodos pra criar esses componentes, e as fábricas específicas (tipo MacOSFactory) colocam a mão na massa e fazem as coisas acontecerem.
 
-
-// A classe Demo configura e executa a criação de uma aplicação com base no sistema operacional.
+// A classe Demo é a responsável por ligar tudo isso e configurar o aplicativo com base no sistema operacional que tá rodando.
 public class Demo {
 
-    // Método responsável por configurar a aplicação, criando a fábrica correta com base no SO.
+    // Esse método aqui que decide qual fábrica a aplicação vai usar, dependendo do sistema operacional que estiver no ambiente.
     private static Application configureApplication() {
-        Application app;  // Declaração da aplicação.
-        GUIFactory factory;  // Declaração da fábrica de GUI.
+        Application app;  // Criação da variável pra aplicação.
+        GUIFactory factory;  // Essa variável vai guardar a fábrica de GUI certa.
         
-        // Obtém o nome do sistema operacional para decidir qual fábrica usar.
+        // Aqui a gente pega o nome do sistema operacional que está rodando na máquina.
         String osName = System.getProperty("os.name").toLowerCase();
         
-        // Se o sistema for MacOS, usa a fábrica MacOSFactory, senão usa a WindowsFactory.
+        // Se o nome do SO tiver "mac" no meio, ele escolhe a fábrica do MacOS. Senão, vai de Windows mesmo.
         if (osName.contains("mac")) {
-            factory = new MacOSFactory();  // Usa a fábrica do MacOS.
+            factory = new MacOSFactory();  // Chamou a fábrica pra sistemas MacOS.
         } else {
-            factory = new WindowsFactory();  // Usa a fábrica do Windows.
+            factory = new WindowsFactory();  // Caso contrário, segue a fábrica padrão do Windows.
         }
         
-        app = new Application(factory);  // Cria a aplicação com a fábrica escolhida.
-        return app;  // Retorna a aplicação configurada.
+        app = new Application(factory);  // Monta a aplicação usando a fábrica escolhida.
+        return app;  // E devolve a aplicação já configuradinha.
     }
 
-    // Método principal que configura e desenha a interface da aplicação.
+    // O famoso main, que bota tudo pra rodar. Aqui é onde a mágica acontece!
     public static void main(String[] args) {
-        Application app = configureApplication();  // Configura a aplicação.
-        app.paint();  // Desenha a interface da aplicação.
+        Application app = configureApplication();  // Primeiro configura a aplicação.
+        app.paint();  // Depois manda a aplicação desenhar a interface na tela.
     }
 }
