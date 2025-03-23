@@ -13,22 +13,21 @@ import checkboxes.WindowsCheckbox;
  *
  * @author FATEC ZONA LESTE
  */
-// A classe WindowsFactory implementa a interface GUIFactory.
-// WindowsFactory é responsável por criar os componentes gráficos específicos para o sistema operacional Windows.
+
+// A classe WindowsFactory implementa a GUIFactory e cuida de criar os componentes gráficos no estilo Windows.
 public class WindowsFactory implements GUIFactory {
 
-    // Este método cria um botão específico para o Windows.
-    // Quando chamado, ele retorna um novo objeto da classe WindowsButton, que é uma implementação do botão para o Windows.
+    // Esse método cria um botão no estilo do Windows.
+    // Quando chamado, ele devolve um novo WindowsButton.
     @Override
     public Button createButton() {
-        return new WindowsButton(); // Retorna um botão Windows.
+        return new WindowsButton();  // Aqui cria e retorna um botão específico pro Windows.
     }
 
-    // Este método cria uma caixa de seleção específica para o Windows.
-    // Quando chamado, ele retorna um novo objeto da classe WindowsCheckbox, que é uma implementação da caixa de seleção para o Windows.
+    // Esse método aqui faz o mesmo, só que pra checkbox (caixa de seleção).
+    // Retorna uma WindowsCheckbox, ou seja, uma checkbox no estilo Windows.
     @Override
     public Checkbox createCheckbox() {
-        return new WindowsCheckbox(); // Retorna uma caixa de seleção Windows.
+        return new WindowsCheckbox();  // Cria e devolve a checkbox do Windows.
     }
 }
-
