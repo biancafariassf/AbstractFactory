@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany</groupId>
-    <artifactId>Atividade1</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+<!-- Esse arquivo é o POM (Project Object Model) do Maven. Ele define a configuração principal do projeto, incluindo dependências, plugins e propriedades do projeto. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion> 
+    <!-- Define a versão do modelo POM que está sendo usada (a versão 4.0.0 é a mais comum). -->
+    
+    <groupId>com.mycompany</groupId> 
+    <!-- groupId: Define a "identidade" do projeto. Normalmente, segue o padrão do pacote Java reverso, como com.mycompany. -->
+
+    <artifactId>Atividade1</artifactId>  
+    <!-- artifactId: Nome do projeto ou módulo. Esse nome será usado ao gerar o arquivo .jar ou .war. -->
+
+    <version>1.0-SNAPSHOT</version>  
+    <!-- version: Define a versão do projeto. O sufixo "SNAPSHOT" indica que o projeto está em desenvolvimento e pode ser alterado antes da versão final. -->
+
+    <packaging>jar</packaging>  
+    <!-- Define o tipo de empacotamento do projeto. Aqui está configurado como "jar" (arquivo Java compilado). Pode ser "war" para projetos web. -->
+
+    <properties>  
+        <!-- Propriedades definem configurações adicionais do projeto, como a codificação do código e a versão do compilador Java. -->
+        
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <!-- Configura a codificação dos arquivos fonte do projeto para UTF-8. -->
+        
+        <maven.compiler.source>11</maven.compiler.source>  
+        <!-- Define a versão do código-fonte Java que será usada (Java 11 neste caso). -->
+        
+        <maven.compiler.target>11</maven.compiler.target>  
+        <!-- Define a versão do bytecode que será gerada pelo compilador (Java 11). -->
     </properties>
+
 </project>
