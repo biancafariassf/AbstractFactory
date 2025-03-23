@@ -8,8 +8,8 @@ package buttons;
  *
  * @author FATEC ZONA LESTE
  */
-// Interface obriga as classes a criarem um método para desenhar o botão.
+
+// Essa interface aqui basicamente força as classes que implementam ela a criar um método pra desenhar o botão na tela.
 public interface Button {
     void paint();
 }
-
