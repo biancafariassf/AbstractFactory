@@ -8,13 +8,15 @@ package buttons;
  *
  * @author FATEC ZONA LESTE
  */
-// A classe WindowsButton implementa a interface Button e define como o botão será desenhado no Windows.
+
+// Aqui temos a classe WindowsButton, que segue a interface Button e diz como o botão vai ser desenhado no sistema Windows.
 public class WindowsButton implements Button {
 
-    // Implementação do método 'paint' que imprime uma mensagem no console.
+    // Esse método 'paint' é o responsável por mandar uma mensagem pro console quando o botão for criado.
     @Override
     public void paint() {
-        System.out.println("You have created WindowsButton.");
+        System.out.println("You have created WindowsButton.");  // Mensagem que aparece quando o botão é "desenhado".
     }
 }
+
 
