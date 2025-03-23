@@ -8,13 +8,13 @@ package buttons;
  *
  * @author FATEC ZONA LESTE
  */
-// A classe MacOSButton implementa a interface Button e define como o botão será desenhado no MacOS.
+
+// Essa classe aqui é o MacOSButton, que segue o contrato da interface Button e mostra como o botão vai aparecer quando usado no sistema MacOS.
 public class MacOSButton implements Button {
 
-    // Implementação do método 'paint' que imprime uma mensagem no console.
+    // Esse é o método 'paint', e o que ele faz é basicamente mandar uma mensagem pro console.
     @Override
     public void paint() {
-        System.out.println("You have created MacOSButton.");
+        System.out.println("You have created MacOSButton.");  // Imprime essa mensagem quando o botão é "desenhado".
     }
 }
-
