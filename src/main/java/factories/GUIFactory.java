@@ -8,17 +8,16 @@ import buttons.Button;
 import checkboxes.Checkbox;
 
 /**
- * A interface GUIFactory serve como um contrato para criar elementos de interface gráfica.
- * Ela garante que qualquer classe que a implementar terá métodos para criar um botão e uma caixa de seleção.
+ * Essa interface aqui, GUIFactory, funciona como um "manual" pra criar os elementos da interface gráfica.
+ * Qualquer classe que usar essa interface vai precisar implementar os métodos pra criar um botão e uma caixa de seleção.
  * 
  * @author FATEC ZONA LESTE
  */
-public interface GUIFactory {  // Define a interface GUIFactory. Uma interface não implementa métodos, ela apenas define quais métodos as classes que a implementarem precisam fornecer.
+public interface GUIFactory {  // Interface que define o que as fábricas precisam fazer. Ela não implementa os métodos, só define a "regra do jogo".
     
-    // Método que as classes que implementam a interface devem fornecer. Ele cria um botão.
+    // Método obrigatório que vai ser usado pra criar um botão.
     Button createButton();  
     
-    // Método que as classes que implementam a interface devem fornecer. Ele cria uma caixa de seleção.
+    // Outro método obrigatório, mas esse aqui é pra criar a caixa de seleção.
     Checkbox createCheckbox();  
-    
-}  
+}
